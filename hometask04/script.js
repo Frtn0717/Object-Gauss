@@ -1,3 +1,4 @@
+// generate random number by Gaussian distribution
 function makeGaussDistr() { 
   let u = 0;
   let v = 0; 
@@ -6,17 +7,23 @@ function makeGaussDistr() {
   return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v) * 2 | 0;
 };
 
-function generateGaussSheet() {
-  const result = {};
+// generate array with random numbers
+function generateArrWithRandomsN() {
   const arr = [];
 
   for(let i = 0; i < 10; i++) {
     arr.push(makeGaussDistr());
   }
 
-  arr.map(x => (x in result) ? (result[x] += 1) : (result[x] = 1));
-
-
+  return arr;
 }
 
-generateGaussSheet();
+// generate object with count each element of array
+function generateObjectByArray(arr) {
+  const result = {}; 
+
+  arr.map(x => (x in result) ? (result[x] += 1) : (result[x] = 1));
+
+  return result;
+}
+
