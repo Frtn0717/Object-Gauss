@@ -13,7 +13,7 @@ h1 {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .result_tab {
@@ -23,7 +23,7 @@ h1 {
   border-collapse: collapse;
 }
 
-td {
+td, th {
   border: 1px solid black;
 }
 
