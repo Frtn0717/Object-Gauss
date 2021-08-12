@@ -36,12 +36,14 @@ function generateObjectByArray(arr) {
 btnArr.addEventListener("click", () => {
   resultArray.value = generateArrWithRandomsN();
   resultArray.classList.remove("hidden");
+  btnRes.classList.remove("hidden");
 });
 
 // show resulting table with our key-values
 btnRes.addEventListener("click", () => {
   const arr = resultArray.value.split(",");
   const obj = generateObjectByArray(arr);
+  const sortedKeys = Object.keys(generateObjectByArray(arr)).sort((prev, curr) => prev - curr);
   const length = Object.keys(obj).length;
   const table = document.getElementById("res_tab");
   const tbody = document.getElementsByTagName("tbody")[0];
@@ -58,11 +60,12 @@ btnRes.addEventListener("click", () => {
     const newRow = document.createElement("tr");
     const newNumCol = document.createElement("td");
     const newCountCol = document.createElement("td");
+    const value = obj[sortedKeys[i]];
 
-    newNumCol.appendChild(document.createTextNode(`${Object.keys(obj)[i]}`));
+    newNumCol.appendChild(document.createTextNode(`${sortedKeys[i]}`));
     newNumCol.style.textAlign = "center";
     newCountCol.appendChild(
-      document.createTextNode(`${Object.values(obj)[i]}`)
+      document.createTextNode(`${value}`)
     );
     newCountCol.style.textAlign = "center";
 
