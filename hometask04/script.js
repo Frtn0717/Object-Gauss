@@ -15,13 +15,7 @@ function makeGaussDistr() {
 
 // generate array with random numbers
 function generateArrWithRandomsN() {
-  const arr = [];
-
-  for (let i = 0; i < 10; i++) {
-    arr.push(makeGaussDistr());
-  }
-
-  return arr;
+  return Array.from({length: 10}, () => (makeGaussDistr()));
 }
 
 // generate object with count each element of array
