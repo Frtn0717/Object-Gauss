@@ -20,11 +20,10 @@ function generateArrWithRandomsN() {
 
 // generate object with count each element of array
 function generateObjectByArray(arr) {
-  const result = {};
-
-  arr.map((x) => (x in result ? (result[x] += 1) : (result[x] = 1)));
-
-  return result;
+  return arr.reduce((result, item) => {
+    result[item] ? result[item] += 1 : result[item] = 1;
+    return result;
+  }, {});
 }
 
 // show our array with Gaussian distribution in the input
