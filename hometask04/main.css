@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 10px;
+}
+
+#wrap_array {
+  margin: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result_tab {
+  margin: 10px;
+  width: 200px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid black;
+}
+
+#btn_res_tab {
+  margin: 10px;
+}
