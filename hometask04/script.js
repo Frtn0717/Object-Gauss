@@ -21,7 +21,7 @@ function generateArrWithRandomsN() {
 // generate object with count each element of array
 function generateObjectByArray(arr) {
   return arr.reduce((result, item) => {
-    result[item] ? result[item] += 1 : result[item] = 1;
+    result[item] = result[item] ? result[item] + 1 : 1;
     return result;
   }, {});
 }
