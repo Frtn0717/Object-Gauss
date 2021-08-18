@@ -2,6 +2,7 @@
 const btnArr = document.getElementById('btn_array');
 const resultArray = document.getElementById('res_arr');
 const btnRes = document.getElementById('btn_res_tab');
+const table = document.getElementById('res_tab');
 
 // generate random number by Gaussian distribution
 function makeGaussDistr() {
@@ -37,6 +38,7 @@ btnArr.addEventListener('click', () => {
   resultArray.value = generateArrWithRandomsN();
   resultArray.classList.remove('hidden');
   btnRes.classList.remove('hidden');
+  table.classList.add('hidden');
 });
 
 // show resulting table with our key-values
@@ -46,8 +48,7 @@ btnRes.addEventListener('click', () => {
   const sortedKeys = Object.keys(generateObjectByArray(arr)).sort(
     (prev, curr) => prev - curr
   );
-  const length = Object.keys(obj).length;
-  const table = document.getElementById('res_tab');
+  const length = Object.keys(obj).length;  
   const tbody = document.getElementsByTagName('tbody')[0];
 
   if (tbody.hasChildNodes()) {
